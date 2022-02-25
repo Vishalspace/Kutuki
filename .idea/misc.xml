@@ -4,11 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.4166666666666667" />
+        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/drawable-v24/selected_video_background.xml" value="0.156" />
         <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/drawable/rounded_corner_button.xml" value="0.2985" />
         <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/activity_main.xml" value="0.30572916666666666" />
         <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/categories_item.xml" value="0.30572916666666666" />
         <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/video_item.xml" value="0.309375" />
-        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/videos_activity.xml" value="0.271875" />
+        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/videos_activity.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.39402173913043476" />
         <entry key="app/src/main/res/layout/categories_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/video_item.xml" value="0.1" />
