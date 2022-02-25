@@ -1,6 +1,10 @@
 package com.kutuki.model
 
 data class CategoryResponse(
+    val response: VideoCategories
+)
+
+data class VideoCategories(
     val videoCategories: Map<String, VideoCategory>
 )
 
@@ -9,7 +13,13 @@ data class VideoCategory(
     val image: String
 )
 
+
+////////////////////////////////
 data class VideoResponse(
+    val response: Videos
+)
+
+data class Videos(
     val videos: Map<String, Video>
 )
 

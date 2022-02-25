@@ -1,7 +1,6 @@
 package com.kutuki.api
 
-import com.kutuki.model.CategoryResponse
-import com.kutuki.model.VideoResponse
+import com.kutuki.model.*
 import retrofit2.http.GET
 import io.reactivex.Observable
 import io.reactivex.Single
@@ -11,5 +10,5 @@ interface KutukiApi {
     fun getCategories(): Single<CategoryResponse>
 
     @GET("5e2beb5a3100006600267e4e")
-    fun getVideos(): Single<List<VideoResponse>>
+    fun getVideos(): Single<VideoResponse>
 }

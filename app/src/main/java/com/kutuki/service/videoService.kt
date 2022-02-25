@@ -12,6 +12,7 @@ class VideoService @Inject constructor(private val api: KutukiApi) {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
+                it.response.videoCategories.toList()
                 logger.loge("response: $it")
             }, {
                 logger.loge("error making api call: $it")
