@@ -51,7 +51,6 @@
                     app:hide_on_touch="true"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:resize_mode="fill"
                     app:show_timeout="5000"
                     app:use_controller="true">
 

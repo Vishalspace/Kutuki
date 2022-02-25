@@ -3,7 +3,10 @@ package com.kutuki.service
 import android.content.Context
 import com.google.android.exoplayer2.MediaItem
 import com.google.android.exoplayer2.SimpleExoPlayer
+import com.google.android.exoplayer2.ui.AspectRatioFrameLayout
+import com.google.android.exoplayer2.ui.PlayerView
 import com.kutuki.model.Video
+import com.norulab.exofullscreen.preparePlayer
 import javax.inject.Inject
 
 class VideoPlayer @Inject constructor(context: Context) {
@@ -22,5 +25,10 @@ class VideoPlayer @Inject constructor(context: Context) {
         player.stop()
         player.release()
         player.clearMediaItems()
+    }
+
+    fun initPlayer(view: PlayerView) {
+        player.preparePlayer(view)
+        view.resizeMode = AspectRatioFrameLayout.RESIZE_MODE_FILL
     }
 }

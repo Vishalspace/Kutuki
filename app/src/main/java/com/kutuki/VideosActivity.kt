@@ -47,7 +47,7 @@ class VideosActivity : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.videosRecyclerView.adapter = adapter
         binding.vaBackButton.setOnClickListener { onBackPressed() }
-        binding.exoplayerView.player = videoPlayer.player
+        videoPlayer.initPlayer(binding.exoplayerView)
     }
 
     private fun onVideoClicked(video: Video) {
