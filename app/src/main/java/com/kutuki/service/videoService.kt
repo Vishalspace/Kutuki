@@ -1,35 +1,21 @@
 package com.kutuki.service
 
 import com.kutuki.api.KutukiApi
-import io.reactivex.android.schedulers.AndroidSchedulers
+import com.kutuki.model.CategoriesMap
+import com.kutuki.model.VideosMap
+import com.kutuki.utils.Logger
+import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 class VideoService @Inject constructor(private val api: KutukiApi) {
 
-    init {
-        val disp = api.getCategories()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                it.response.videoCategories.toList()
-                logger.loge("response: $it")
-            }, {
-                logger.loge("error making api call: $it")
-            })
-        logger.loge(disp.toString())
+    fun getCategories(): Single<CategoriesMap> {
+        return api.getCategories().map { it.response }.subscribeOn(Schedulers.io())
     }
 
-    init {
-        val disp1 = api.getVideos()
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                logger.loge("response: $it")
-            }, {
-                logger.loge("error making api call: $it")
-            })
-        logger.loge(disp1.toString())
+    fun getVideos(): Single<VideosMap> {
+        return api.getVideos().map { it.response }.subscribeOn(Schedulers.io())
     }
 
     companion object {

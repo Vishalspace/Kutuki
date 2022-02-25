@@ -1,25 +1,20 @@
 package com.kutuki.model
 
-data class CategoryResponse(
-    val response: VideoCategories
+data class GetCategoriesResponse(
+    val response: CategoriesMap
 )
 
-data class VideoCategories(
-    val videoCategories: Map<String, VideoCategory>
-)
+data class CategoriesMap(val videoCategories: Map<String, Category>)
 
-data class VideoCategory(
+data class Category(
+    val id: String,
     val name: String,
     val image: String
 )
 
+data class GetVideosResponse(val response: VideosMap)
 
-////////////////////////////////
-data class VideoResponse(
-    val response: Videos
-)
-
-data class Videos(
+data class VideosMap(
     val videos: Map<String, Video>
 )
 

@@ -3,8 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/activity_main.xml" value="0.2569230769230769" />
-        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/categorycard.xml" value="0.215625" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.4166666666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.39402173913043476" />
+        <entry key="app/src/main/res/layout/categories_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/video_item.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/videos_activity.xml" value="0.1648148148148148" />
       </map>
     </option>
   </component>
