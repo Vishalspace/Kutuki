@@ -62,11 +62,16 @@ class VideosActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        videoService.getVideos().observeOn(AndroidSchedulers.mainThread())
+        videoService.getVideos(getCategoryName()).observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { onVideosLoaded(it) },
                 { logger.error("Error fetching categories", it) }
             ).addTo(compositeDisposable)
+    }
+
+    private fun getCategoryName(): String? {
+        val name = intent.getStringExtra(CATEGORY_NAME)
+        return if (name.isNullOrBlank()) null else name
     }
 
     override fun onPause() {
