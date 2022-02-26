@@ -4,11 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.4166666666666667" />
+        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.343" />
         <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/drawable-v24/selected_video_background.xml" value="0.156" />
+        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3265" />
+        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/drawable/notselected_item_background.xml" value="0.231" />
         <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/drawable/rounded_corner_button.xml" value="0.2985" />
+        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/drawable/selected_background.xml" value="0.231" />
+        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/drawable/selected_item_background.xml" value="0.343" />
         <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/activity_main.xml" value="0.30572916666666666" />
+        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/background_selector.xml" value="0.32395833333333335" />
         <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/categories_item.xml" value="0.30572916666666666" />
-        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/video_item.xml" value="0.309375" />
+        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/line_divider.xml" value="0.32395833333333335" />
+        <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/video_item.xml" value="0.9" />
         <entry key="..\:/Cache/ADSCode/Kutuki/app/src/main/res/layout/videos_activity.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.39402173913043476" />
         <entry key="app/src/main/res/layout/categories_item.xml" value="0.1" />

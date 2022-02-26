@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.kutuki.R
 import com.kutuki.databinding.VideoItemBinding
 import com.kutuki.model.Video
 import com.kutuki.utils.inflater
@@ -14,6 +15,7 @@ class VideosAdapter constructor(
     private val context: Context,
     private val onClick: (Pair<String, Video>) -> Unit
 ) : ListAdapter<Pair<String, Video>, VideoViewHolder>(VideosDiffCallBack()) {
+    private var selectedVideoId: String = "NO_ID"
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoViewHolder {
         return VideoViewHolder(VideoItemBinding.inflate(parent.inflater(), parent, false))
@@ -22,7 +24,16 @@ class VideosAdapter constructor(
     override fun onBindViewHolder(holder: VideoViewHolder, position: Int) {
         val video = getItem(position)
         Glide.with(context).load(video.second.thumbnailURL).into(holder.binding.videothumbnail)
-        holder.binding.root.setOnClickListener { onClick(video) }
+        if (video.first == selectedVideoId) {
+            holder.itemView.setBackgroundResource(R.drawable.selected_item_background)
+        } else {
+            holder.itemView.setBackgroundResource(R.drawable.transparent_item_background)
+        }
+        holder.binding.root.setOnClickListener {
+            selectedVideoId = video.first
+            notifyDataSetChanged()
+            onClick(video)
+        }
     }
 
     fun firstItem(): Video? {
