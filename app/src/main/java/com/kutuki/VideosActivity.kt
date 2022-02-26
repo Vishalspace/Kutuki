@@ -8,8 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.google.android.exoplayer2.MediaItem
-import com.google.android.exoplayer2.SimpleExoPlayer
 import com.kutuki.databinding.VideosActivityBinding
 import com.kutuki.model.Category
 import com.kutuki.model.Video
@@ -46,6 +44,7 @@ class VideosActivity : AppCompatActivity() {
         binding.videosRecyclerView.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding.videosRecyclerView.adapter = adapter
+        binding.videosRecyclerView.setHasFixedSize(true)
         binding.vaBackButton.setOnClickListener { onBackPressed() }
         videoPlayer.initPlayer(binding.exoplayerView)
     }
@@ -56,7 +55,7 @@ class VideosActivity : AppCompatActivity() {
     }
 
     private fun onVideosLoaded(videosMap: VideosMap) {
-        adapter.updateData(videosMap)
+        adapter.submitList(videosMap.videos.toList())
         adapter.firstItem()?.let { onVideoClicked(it) }
     }
 

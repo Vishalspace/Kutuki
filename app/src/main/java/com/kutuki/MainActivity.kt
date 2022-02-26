@@ -1,14 +1,14 @@
 package com.kutuki
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
 import com.kutuki.databinding.ActivityMainBinding
 import com.kutuki.model.Category
-import com.kutuki.utils.Logger
 import com.kutuki.service.VideoService
 import com.kutuki.ui.CategoriesAdapter
+import com.kutuki.utils.Logger
 import com.kutuki.utils.addTo
 import com.kutuki.utils.injector
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         videoService.getCategories().observeOn(AndroidSchedulers.mainThread())
             .subscribe(
-                { adapter.updateData(it) },
+                { adapter.submitList(it.videoCategories.toList()) },
                 { logger.error("Error fetching categories", it) }
             ).addTo(compositeDisposable)
     }
