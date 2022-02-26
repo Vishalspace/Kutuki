@@ -4,10 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.WindowManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.kutuki.databinding.VideosActivityBinding
 import com.kutuki.model.Category
 import com.kutuki.model.Video
@@ -50,7 +50,6 @@ class VideosActivity : AppCompatActivity() {
     }
 
     private fun onVideoClicked(video: Video) {
-        Glide.with(this).load(video.thumbnailURL).into(binding.currentVideoThumbnail)
         videoPlayer.play(video)
     }
 
@@ -64,7 +63,10 @@ class VideosActivity : AppCompatActivity() {
         videoService.getVideos(getCategoryName()).observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { onVideosLoaded(it) },
-                { logger.error("Error fetching categories", it) }
+                {
+                    logger.error("Error fetching categories", it)
+                    Toast.makeText(this, "Unable to connect to internet", Toast.LENGTH_SHORT).show()
+                }
             ).addTo(compositeDisposable)
     }
 

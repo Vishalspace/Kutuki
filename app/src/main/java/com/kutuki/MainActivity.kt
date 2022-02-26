@@ -1,6 +1,7 @@
 package com.kutuki
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.GridLayoutManager
@@ -41,7 +42,10 @@ class MainActivity : AppCompatActivity() {
         videoService.getCategories().observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 { adapter.submitList(it.videoCategories.toList()) },
-                { logger.error("Error fetching categories", it) }
+                {
+                    logger.error("Error fetching categories", it)
+                    Toast.makeText(this, "Unable to connect to internet", Toast.LENGTH_SHORT).show()
+                }
             ).addTo(compositeDisposable)
     }
 
